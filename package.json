@@ -2,7 +2,7 @@
     "name": "rust-builder",
     "displayName": "rust-builder",
     "description": "Helper for building Rust projects with many examples/bins",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "publisher": "prime31",
     "engines": {
         "vscode": "^1.76.0"
@@ -10,7 +10,7 @@
     "categories": [
         "Other"
     ],
-    "icon": "images/zig-icon.png",
+    "icon": "images/rust-icon.png",
     "license": "MIT",
     "repository": {
         "type": "git",

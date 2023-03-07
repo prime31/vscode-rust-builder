@@ -7,7 +7,6 @@ Simple helper that parses your `cargo run --bin` and `cargo run --example` outpu
 ## Features
  - provides a parser for finding `cargo run` targets
  - keyboard shortcut and VS Code commands for building the last target or choosing a target to build
- - each setup for debugging your last built target with CodeLLDB
 
 
 ## Usage
