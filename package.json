@@ -1,0 +1,67 @@
+{
+    "name": "rust-builder",
+    "displayName": "rust-builder",
+    "description": "Helper for building Rust projects with many examples/bins",
+    "version": "0.0.1",
+    "publisher": "prime31",
+    "engines": {
+        "vscode": "^1.76.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "icon": "images/zig-icon.png",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/prime31/vscode-rust-builder"
+    },
+    "activationEvents": [],
+    "main": "./out/extension.js",
+    "contributes": {
+        "taskDefinitions": [],
+        "commands": [
+            {
+                "command": "rust-builder.buildLastTarget",
+                "title": "Rust-Builder: Build last target"
+            },
+            {
+                "command": "rust-builder.buildTarget",
+                "title": "Rust-Builder: Build choosing target"
+            }
+        ],
+        "keybindings": [
+            {
+                "command": "rust-builder.buildLastTarget",
+                "key": "cmd+shift+r"
+            },
+            {
+                "command": "rust-builder.buildTarget",
+                "key": "cmd+shift+alt+r"
+            }
+        ]
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "pretest": "npm run compile && npm run lint",
+        "lint": "eslint src --ext ts",
+        "test": "node ./out/test/runTest.js",
+        "publish": "vsce package",
+        "publish_vsce_on_path": "vsce package"
+    },
+    "devDependencies": {
+        "@types/vscode": "^1.76.0",
+        "@types/glob": "^8.1.0",
+        "@types/mocha": "^10.0.1",
+        "@types/node": "16.x",
+        "@typescript-eslint/eslint-plugin": "^5.53.0",
+        "@typescript-eslint/parser": "^5.53.0",
+        "eslint": "^8.34.0",
+        "glob": "^8.1.0",
+        "mocha": "^10.2.0",
+        "typescript": "^4.9.5",
+        "@vscode/test-electron": "^2.2.3"
+    }
+}
