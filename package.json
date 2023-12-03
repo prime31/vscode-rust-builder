@@ -2,7 +2,7 @@
     "name": "rust-builder",
     "displayName": "rust-builder",
     "description": "Helper for building Rust projects with many examples/bins",
-    "version": "0.0.2",
+    "version": "0.1.0",
     "publisher": "prime31",
     "engines": {
         "vscode": "^1.76.0"
@@ -16,28 +16,34 @@
         "type": "git",
         "url": "https://github.com/prime31/vscode-rust-builder"
     },
-    "activationEvents": [],
+    "activationEvents": [
+        "workspaceContains:**/Cargo.toml"
+    ],
     "main": "./out/extension.js",
     "contributes": {
         "taskDefinitions": [],
         "commands": [
             {
                 "command": "rust-builder.buildLastTarget",
-                "title": "Rust-Builder: Build last target"
+                "title": "Rust-Builder: Build last target",
+                "when": "editorLangId == 'rust'"
             },
             {
                 "command": "rust-builder.buildTarget",
-                "title": "Rust-Builder: Build choosing target"
+                "title": "Rust-Builder: Build choosing target",
+                "when": "editorLangId == 'rust'"
             }
         ],
         "keybindings": [
             {
                 "command": "rust-builder.buildLastTarget",
-                "key": "cmd+shift+r"
+                "key": "cmd+shift+r",
+                "when": "editorLangId == 'rust'"
             },
             {
                 "command": "rust-builder.buildTarget",
-                "key": "cmd+shift+alt+r"
+                "key": "cmd+shift+alt+r",
+                "when": "editorLangId == 'rust'"
             }
         ]
     },
